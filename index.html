@@ -1,40 +1,461 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nalam | Kitchen & Dressing Room</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nalam (نالام) — Custom Kitchens, Dressing Rooms &amp; Luxury Furniture | New Cairo</title>
+  <meta name="description" content="Nalam (نالام) — Your Zone Is Glam. Luxury custom kitchens, dressing rooms, and bespoke furniture crafted in New Cairo, Egypt with Good Wood, Boardium, SAMET, and FGV hardware.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Nalam | Kitchen & Dressing Room</h1>
-        <nav>
-            <ul>
-                <li><a href="#kitchen">Kitchen</a></li>
-                <li><a href="#dressing-room">Dressing Room</a></li>
-            </ul>
-        </nav>
-        <h2>Kitchen & Dressing Room</h2>
-        <h3>Kitchens</h3>
-        <h4>Dressing</h4>
-    </header>
 
-    <main>
-        <section id="kitchen">
-            <h2>Kitchen</h2>
-            <p>Explore our modern kitchen designs and appliances.</p>
-        </section>
+  <!-- Sticky Glassmorphism Beige Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand-lockup" aria-label="Nalam Home">
+        <img src="assets/logo.png" alt="Nalam — Kitchen &amp; Dressing Room" class="brand-logo">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-slogan">Your Zone Is Glam.</span>
+      </a>
 
-        <section id="dressing-room">
-            <h2>Dressing Room</h2>
-            <p>Discover our stylish dressing room solutions.</p>
-        </section>
-        <img src="IMG/N-37016.png" alt="Dressing Room">
-    </main>
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#showcase" data-i18n="nav_showcase">Showcase</a></li>
+          <li><a href="#stages" data-i18n="nav_stages">Our Stages</a></li>
+          <li><a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a></li>
+          <li><a href="#materials" data-i18n="nav_materials">Materials &amp; Hardware</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+        </ul>
+      </nav>
 
-    <footer>
-        <p>Your Zone is Glam.</p>
-    </footer>
+      <div class="header-actions">
+        <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch Language">
+          <span data-i18n="lang_btn">عربي</span>
+        </button>
+        <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa header-wa" data-i18n="nav_wa">WhatsApp Inquiry</a>
+        <button type="button" class="menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#showcase" data-i18n="nav_showcase">Showcase</a></li>
+      <li><a href="#stages" data-i18n="nav_stages">Our Stages</a></li>
+      <li><a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a></li>
+      <li><a href="#materials" data-i18n="nav_materials">Materials &amp; Hardware</a></li>
+      <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
+    </ul>
+    <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;" data-i18n="nav_wa">WhatsApp Inquiry</a>
+  </div>
+
+  <!-- Hero Scroll-Reveal 5-Stage Kitchen Transformation -->
+  <section id="showcase" class="hero-scroll-track">
+    <div class="hero-sticky">
+      <div class="hero-shell">
+        <div class="room-stage-frame">
+          <img src="assets/room-empty.jpg" alt="Empty Architectural Room" class="room-layer base-layer">
+          <img src="assets/stage-1-base.jpg" alt="Stage 1: Base Cabinets and Countertop" class="room-layer" data-stage="1">
+          <img src="assets/stage-2-tall.jpg" alt="Stage 2: Tall Wardrobe Tower and Refrigerator" class="room-layer" data-stage="2">
+          <img src="assets/stage-3-upper.jpg" alt="Stage 3: Upper Cabinets and Marble Backsplash" class="room-layer" data-stage="3">
+          <img src="assets/stage-4-appliances.jpg" alt="Stage 4: Built-in Stove and Chimney Air Vent" class="room-layer" data-stage="4">
+          <img src="assets/room-furnished.jpg" alt="Stage 5: Completed Luxury Kitchen with Island and Chairs" class="room-layer" data-stage="5">
+
+          <div class="stage-badge-overlay">
+            <span class="stage-badge-dot"></span>
+            <span id="stageBadgeText">00 / 05</span>
+          </div>
+          <div class="stage-progress-bar">
+            <div class="stage-progress-fill" id="stageProgressFill"></div>
+          </div>
+        </div>
+
+        <div class="hero-editorial-panel">
+          <div>
+            <div class="eyebrow" data-i18n="hero_eyebrow">NEW CAIRO ARCHITECTURAL SHOWROOM</div>
+            <h1 class="hero-title">
+              <span style="color:inherit;font-style:normal;" data-i18n="hero_title_1">Watch Space</span>
+              <span data-i18n="hero_title_em">Come Alive</span>
+            </h1>
+            <p class="hero-lead" data-i18n="hero_lead">Scroll down to experience how Nalam transforms an empty architectural room into a bespoke luxury kitchen—stage by stage.</p>
+          </div>
+
+          <div class="stage-callout-stack">
+            <div class="stage-card active" data-stage-card="0">
+              <div class="stage-card-step" data-i18n="stage_0_num">STAGE 00 / 05 — ARCHITECTURAL CANVAS</div>
+              <h3 data-i18n="stage_0_title">The Empty Architectural Space</h3>
+              <p data-i18n="stage_0_desc">Every Nalam project begins with exact on-site laser measurements, plumbing/electrical mapping, and bespoke space planning.</p>
+            </div>
+            <div class="stage-card" data-stage-card="1">
+              <div class="stage-card-step" data-i18n="stage_1_num">STAGE 01 / 05 — FOUNDATION</div>
+              <h3 data-i18n="stage_1_title">Base Cabinets &amp; Marble Countertop</h3>
+              <p data-i18n="stage_1_desc">Precision-built Good Wood sandwich blockboard base units with 100% waterproof Boardium sink carcass and honed veined marble countertop.</p>
+            </div>
+            <div class="stage-card" data-stage-card="2">
+              <div class="stage-card-step" data-i18n="stage_2_num">STAGE 02 / 05 — VERTICAL ARCHITECTURE</div>
+              <h3 data-i18n="stage_2_title">Tall Wardrobe Tower &amp; Refrigerator</h3>
+              <p data-i18n="stage_2_desc">Full-height pantry cabinetry seamlessly integrating the stainless French-door refrigerator alongside the built-in microwave and oven tower.</p>
+            </div>
+            <div class="stage-card" data-stage-card="3">
+              <div class="stage-card-step" data-i18n="stage_3_num">STAGE 03 / 05 — ELEVATION &amp; LIGHT</div>
+              <h3 data-i18n="stage_3_title">Upper Cabinets &amp; Illuminated Backsplash</h3>
+              <p data-i18n="stage_3_desc">Full-height upper cabinetry with smoked glass showcase, warm recessed LED profiles, and book-matched veined marble backsplash.</p>
+            </div>
+            <div class="stage-card" data-stage-card="4">
+              <div class="stage-card-step" data-i18n="stage_4_num">STAGE 04 / 05 — CULINARY HARDWARE</div>
+              <h3 data-i18n="stage_4_title">Built-In Stove &amp; Chimney Air Vent</h3>
+              <p data-i18n="stage_4_desc">Flush-mounted induction/gas cooktop paired with a matte black architectural chimney hood for clean airflow and sleek lines.</p>
+            </div>
+            <div class="stage-card" data-stage-card="5">
+              <div class="stage-card-step" data-i18n="stage_5_num">STAGE 05 / 05 — THE CENTERPIECE</div>
+              <h3 data-i18n="stage_5_title">Center Island &amp; Barstool Seating</h3>
+              <p data-i18n="stage_5_desc">The completed Nalam kitchen: a generous veined marble island with deep storage drawers and six tailored barstools. Your Zone Is Glam.</p>
+            </div>
+          </div>
+
+          <div class="stage-pills" aria-label="Kitchen Assembly Stages">
+            <button type="button" class="stage-pill active" data-stage-btn="0" data-i18n="pill_0">00 Empty</button>
+            <button type="button" class="stage-pill" data-stage-btn="1" data-i18n="pill_1">01 Base &amp; Counter</button>
+            <button type="button" class="stage-pill" data-stage-btn="2" data-i18n="pill_2">02 Wardrobe &amp; Fridge</button>
+            <button type="button" class="stage-pill" data-stage-btn="3" data-i18n="pill_3">03 Uppers &amp; Backsplash</button>
+            <button type="button" class="stage-pill" data-stage-btn="4" data-i18n="pill_4">04 Stove &amp; Vent</button>
+            <button type="button" class="stage-pill" data-stage-btn="5" data-i18n="pill_5">05 Island &amp; Chairs</button>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#catalogue" class="btn btn-primary" data-i18n="hero_cta_cat">Explore Sales Catalogue</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero_cta_book">Book Showroom Visit</a>
+          </div>
+
+          <div class="scroll-cue">
+            <span class="scroll-cue-line"></span>
+            <span data-i18n="hero_scroll_cue">Scroll to assemble the kitchen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship Stages & Real Project Spotlight -->
+  <section id="stages" class="section-pad stages-section">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="eyebrow" data-i18n="stages_eyebrow">THE NALAM CRAFT PROCESS</div>
+        <h2 class="section-title" data-i18n="stages_title">Three Disciplined Stages. Zero Guesswork.</h2>
+        <p class="section-subtitle" data-i18n="stages_sub">From photorealistic 3D layouts to raw factory precision and clean on-site installation—what you approve is exactly what we deliver.</p>
+      </div>
+
+      <div class="journey-grid">
+        <article class="journey-card">
+          <div class="journey-img-wrap">
+            <img src="assets/stage-3d.jpg" alt="Nalam Stage 1: 3D Modelling" loading="lazy" data-zoomable>
+            <span class="journey-num">01</span>
+          </div>
+          <div class="journey-body">
+            <h3 data-i18n="journey_1_title">3D Modelling &amp; Layout</h3>
+            <p data-i18n="journey_1_desc">Designing spaces and creating possibilities with corner and straight layout studies before a single board is cut.</p>
+            <div class="journey-tags">
+              <span class="journey-tag">Precise Design</span>
+              <span class="journey-tag">Realistic Visuals</span>
+              <span class="journey-tag">Better Planning</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-img-wrap">
+            <img src="assets/stage-prefinish.jpg" alt="Nalam Stage 2: Pre-Finishing Stage" loading="lazy" data-zoomable>
+            <span class="journey-num">02</span>
+          </div>
+          <div class="journey-body">
+            <h3 data-i18n="journey_2_title">Pre-Finishing Stage</h3>
+            <p data-i18n="journey_2_desc">Every great space starts long before the final touch—precision CNC joinery, raw carcass checks, and lighting integration in our workshop.</p>
+            <div class="journey-tags">
+              <span class="journey-tag">Quality in Every Detail</span>
+              <span class="journey-tag">Perfect Finishing</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="journey-card">
+          <div class="journey-img-wrap">
+            <img src="assets/stage-onsite.jpg" alt="Nalam Stage 3: On-Site Photos" loading="lazy" data-zoomable>
+            <span class="journey-num">03</span>
+          </div>
+          <div class="journey-body">
+            <h3 data-i18n="journey_3_title">On-Site Installation</h3>
+            <p data-i18n="journey_3_desc">Real spaces, real work, real results—installed by Nalam engineers with 5-year warranty and lifetime maintenance support.</p>
+            <div class="journey-tags">
+              <span class="journey-tag">5 Years Warranty</span>
+              <span class="journey-tag">Lifetime Maintenance</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Real Client Kitchen Walkthrough & Watermark-Free Photos -->
+      <div class="spotlight-box">
+        <div class="spotlight-video-wrap">
+          <video controls playsinline preload="metadata" poster="assets/kitchen-walkthrough-poster.jpg">
+            <source src="assets/kitchen-walkthrough.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="spotlight-content">
+          <div class="eyebrow" data-i18n="spotlight_eyebrow">REAL DELIVERED PROJECT</div>
+          <h3 data-i18n="spotlight_title">Client Walkthrough &amp; On-Site Finish</h3>
+          <blockquote class="spotlight-quote" data-i18n="spotlight_quote">
+            “I would like to thank the Nalam team and Eng. Islam for the design, execution, and finishing—truly outstanding and far better than I imagined, at a very competitive price.”
+          </blockquote>
+          <p style="font-size:0.86rem;color:var(--gold-light);margin-bottom:1.4rem;font-weight:600;" data-i18n="spotlight_credit">— Verified Nalam Kitchen Client, Cairo</p>
+          <div class="spotlight-photos">
+            <img src="assets/project-kitchen-1.jpg" alt="Completed Nalam Wood &amp; Cream Kitchen — Stove Wall" loading="lazy" data-zoomable>
+            <img src="assets/project-kitchen-2.jpg" alt="Completed Nalam Wood &amp; Cream Kitchen — Sink &amp; Fridge Wall" loading="lazy" data-zoomable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 9-Category Sales Catalogue -->
+  <section id="catalogue" class="section-pad catalogue-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" data-i18n="cat_eyebrow">SALES CATALOGUE — 9 CATEGORIES</div>
+        <h2 class="section-title" data-i18n="cat_title">Bespoke Furniture &amp; Cabinetry</h2>
+        <p class="section-subtitle" data-i18n="cat_sub">Browse all nine custom categories with transparent EGP pricing. Select any piece to inspect multiple angles and reserve directly via InstaPay or Mobile Wallet.</p>
+      </div>
+
+      <div class="filter-bar" id="catalogueFilterBar" role="tablist" aria-label="Furniture Categories"></div>
+      <div class="catalogue-grid" id="catalogueGrid"></div>
+    </div>
+  </section>
+
+  <!-- Materials & Hardware Section -->
+  <section id="materials" class="section-pad materials-section">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="eyebrow" data-i18n="mat_eyebrow">ENGINEERING &amp; HARDWARE</div>
+        <h2 class="section-title" data-i18n="mat_title">Built for Decades of Daily Use</h2>
+        <p class="section-subtitle" data-i18n="mat_sub">Luxury aesthetics mean nothing without structural integrity underneath. Every Nalam unit is engineered with certified boards and European/Turkish motion hardware.</p>
+      </div>
+
+      <div class="materials-grid">
+        <div class="material-card">
+          <div class="material-icon">01</div>
+          <h3 data-i18n="mat_1_title">Good Wood / Top Wood</h3>
+          <p data-i18n="mat_1_desc">Premium melamine-faced sandwich blockboard carcasses providing superior screw-holding strength, zero warping, and clean interior finishes.</p>
+        </div>
+        <div class="material-card">
+          <div class="material-icon">02</div>
+          <h3 data-i18n="mat_2_title">100% Waterproof Boardium</h3>
+          <p data-i18n="mat_2_desc">Dedicated high-density, 100% water-resistant Boardium used for kitchen sink bases and all WC vanity units to eliminate moisture swelling forever.</p>
+        </div>
+        <div class="material-card">
+          <div class="material-icon">03</div>
+          <h3 data-i18n="mat_3_title">Turkish SAMET Hinges</h3>
+          <p data-i18n="mat_3_desc">Original Turkish SAMET soft-close hydraulic hinges engineered for silent, effortless door closing across tens of thousands of cycles.</p>
+        </div>
+        <div class="material-card">
+          <div class="material-icon">04</div>
+          <h3 data-i18n="mat_4_title">Italian FGV Runners</h3>
+          <p data-i18n="mat_4_desc">Concealed Italian FGV undermount soft-close drawer runners delivering smooth full-extension glide even under heavy cookware loads.</p>
+        </div>
+      </div>
+
+      <div class="warranty-strip">
+        <div class="warranty-item">
+          <strong data-i18n="war_1_t">Professional Installation</strong>
+          <span data-i18n="war_1_s">Precision alignment by Nalam site engineers</span>
+        </div>
+        <div class="warranty-item">
+          <strong data-i18n="war_2_t">5-Year Warranty</strong>
+          <span data-i18n="war_2_s">Full structural &amp; hardware peace of mind</span>
+        </div>
+        <div class="warranty-item">
+          <strong data-i18n="war_3_t">Lifetime Maintenance</strong>
+          <span data-i18n="war_3_s">Ongoing after-sales care whenever you need us</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us & New Cairo Showroom Section -->
+  <section id="contact" class="section-pad contact-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow" data-i18n="contact_eyebrow">NEW CAIRO SHOWROOM &amp; CONSULTATIONS</div>
+        <h2 class="section-title" data-i18n="contact_title">Bring Your Space to Life</h2>
+        <p class="section-subtitle" data-i18n="contact_sub">Visit our New Cairo showroom or send your project specs directly to our WhatsApp design desk for a tailored quotation.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="showroom-card">
+          <div class="showroom-item">
+            <div class="showroom-dot">&#9906;</div>
+            <div>
+              <h4 data-i18n="lbl_location">Showroom Location</h4>
+              <p data-config-address>New Cairo Showroom, Cairo Governorate, Egypt</p>
+            </div>
+          </div>
+          <div class="showroom-item">
+            <div class="showroom-dot">&#9742;</div>
+            <div>
+              <h4 data-i18n="lbl_phone">Phone &amp; WhatsApp</h4>
+              <a href="tel:+201132284750" dir="ltr">+20 11 32284750</a>
+            </div>
+          </div>
+          <div class="showroom-item">
+            <div class="showroom-dot">&#9719;</div>
+            <div>
+              <h4 data-i18n="lbl_hours">Showroom Hours</h4>
+              <p data-config-hours>Daily: 11:00 AM – 10:00 PM (Showroom &amp; Consultations)</p>
+            </div>
+          </div>
+          <div class="showroom-item">
+            <div class="showroom-dot">&#9733;</div>
+            <div>
+              <h4 data-i18n="lbl_social">Instagram</h4>
+              <a href="https://www.instagram.com/nalam.kitchen.dressingroom/" target="_blank" rel="noopener noreferrer">@nalam.kitchen.dressingroom</a>
+            </div>
+          </div>
+
+          <div class="showroom-actions">
+            <a href="https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="btn_maps">Open in Google Maps</a>
+            <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" data-i18n="btn_wa_direct">Chat on WhatsApp</a>
+          </div>
+        </div>
+
+        <form class="inquiry-form" data-wa-inquiry-form>
+          <div class="form-group">
+            <label for="inqName" data-i18n="form_name">Full Name</label>
+            <input id="inqName" name="name" type="text" required data-i18n-placeholder="form_name_ph" placeholder="e.g. Ahmed Hassan">
+          </div>
+          <div class="form-group">
+            <label for="inqPhone" data-i18n="form_phone">Phone / WhatsApp Number</label>
+            <input id="inqPhone" name="phone" type="tel" required dir="ltr" data-i18n-placeholder="form_phone_ph" placeholder="01X XXXX XXXX">
+          </div>
+          <div class="form-group">
+            <label for="inqCat" data-i18n="form_category">Interested Category</label>
+            <select id="inqCat" name="category" data-inquiry-cat-select></select>
+          </div>
+          <div class="form-group">
+            <label for="inqArea" data-i18n="form_area">Compound / Delivery Area</label>
+            <input id="inqArea" name="area" type="text" required data-i18n-placeholder="form_area_ph" placeholder="e.g. New Cairo, Fifth Settlement, Rehab">
+          </div>
+          <div class="form-group full">
+            <label for="inqNotes" data-i18n="form_notes">Dimensions or Project Notes</label>
+            <textarea id="inqNotes" name="notes" rows="4" data-i18n-placeholder="form_notes_ph" placeholder="Share rough dimensions, preferred finish, or showroom visit time..."></textarea>
+          </div>
+          <div class="form-group full">
+            <button type="submit" class="btn btn-gold" style="width:100%;" data-i18n="form_submit">Send Inquiry via WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo-light.png" alt="Nalam — Kitchen &amp; Dressing Room" class="footer-logo">
+          <div class="footer-slogan">Your Zone Is Glam.</div>
+          <p class="footer-desc" data-i18n="footer_desc">Bespoke luxury kitchens, dressing rooms, and architectural cabinetry crafted in New Cairo with European/Turkish hardware and 5-year warranty.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_nav_title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#showcase" data-i18n="nav_showcase">Showcase</a></li>
+            <li><a href="#stages" data-i18n="nav_stages">Our Stages</a></li>
+            <li><a href="#catalogue" data-i18n="nav_catalogue">Catalogue</a></li>
+            <li><a href="#materials" data-i18n="nav_materials">Materials &amp; Hardware</a></li>
+            <li><a href="contact.html" data-i18n="footer_contact_page">Dedicated Contact Page</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_title">Showroom &amp; Direct</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+201132284750" dir="ltr">+20 11 32284750</a></li>
+            <li><a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" data-i18n="btn_wa_direct">Chat on WhatsApp</a></li>
+            <li><a href="https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6" target="_blank" rel="noopener noreferrer" data-i18n="btn_maps">Open in Google Maps</a></li>
+            <li><a href="https://www.instagram.com/nalam.kitchen.dressingroom/" target="_blank" rel="noopener noreferrer">@nalam.kitchen.dressingroom</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Nalam (نالام). All Rights Reserved.</span>
+        <span style="font-family:var(--font-serif);font-style:italic;color:var(--gold-light);">Your Zone Is Glam.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Multi-View Product Lightbox Modal -->
+  <div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
+
+      <div class="modal-gallery">
+        <div class="modal-main-img-wrap">
+          <img id="modalMainImg" src="" alt="Product Preview">
+          <span class="modal-angle-label" id="modalAngleLabel">Front View</span>
+        </div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+
+      <div class="modal-details">
+        <div class="eyebrow" id="modalCategory" style="margin-bottom:0.2rem;">Category</div>
+        <h2 id="modalTitle">Product Title</h2>
+
+        <div class="modal-price-bar">
+          <span data-i18n="cat_starting" style="font-size:0.82rem;color:var(--espresso-muted);font-weight:600;">Price</span>
+          <span class="modal-price-val" id="modalPrice">0 EGP</span>
+        </div>
+
+        <ul class="modal-specs-list">
+          <li><strong data-i18n="modal_dims">Dimensions:</strong> <span id="modalDimsVal"></span></li>
+          <li><strong data-i18n="modal_mat">Materials:</strong> <span id="modalMatVal"></span></li>
+          <li><strong data-i18n="modal_hw">Hardware:</strong> <span id="modalHwVal"></span></li>
+          <li><strong data-i18n="modal_fin">Featured Finish:</strong> <span id="modalFinVal"></span></li>
+        </ul>
+
+        <form class="order-box" id="modalOrderForm">
+          <h4 data-i18n="modal_order_title">Reserve / Order via InstaPay or Mobile Wallet</h4>
+          <div class="instapay-pill">
+            <span><strong data-i18n="modal_instapay_lbl">InstaPay Address (Default):</strong> <code id="modalInstapayHandle">nalam@instapay</code></span>
+            <button type="button" class="copy-btn" id="copyInstapayBtn" data-i18n="modal_copy">Copy</button>
+          </div>
+          <div class="order-grid">
+            <input type="text" id="orderCustName" required data-i18n-placeholder="modal_cust_name" placeholder="Your Full Name">
+            <input type="text" id="orderCustArea" required data-i18n-placeholder="modal_cust_area" placeholder="Delivery Area (e.g. New Cairo)">
+            <select id="orderPayMethod" class="full">
+              <option value="InstaPay" data-i18n="modal_pay_instapay">InstaPay (Instant Bank Transfer)</option>
+              <option value="Mobile Wallet" data-i18n="modal_pay_wallet">Mobile Wallet (Vodafone / Orange / Etisalat Cash)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-wa" style="width:100%;" data-i18n="modal_order_btn">Reserve / Order via WhatsApp</button>
+          <p style="font-size:0.75rem;color:var(--espresso-muted);text-align:center;" data-i18n="modal_no_card">Zero credit card gateways — fast confirmation directly with Nalam sales on WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Zoom Lightbox for Stage & Real Project Photos -->
+  <div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true">
+    <img id="zoomModalImg" src="" alt="Zoomed Project Photo">
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="nalamToast" role="status" aria-live="polite"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
 </body>
+</html>
