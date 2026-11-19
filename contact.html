@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact &amp; Showroom Consultation — Nalam (نالام) New Cairo</title>
-  <meta name="description" content="Visit the Nalam (نالام) New Cairo showroom or book a kitchen, dressing room, or custom furniture consultation directly via WhatsApp.">
+  <title>Contact &amp; Showroom Consultation — Nalam New Cairo</title>
+  <meta name="description" content="Visit the Nalam New Cairo showroom or book a kitchen, dressing room, or custom furniture consultation directly via WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +15,14 @@
   <!-- Shared Sticky Glassmorphism Beige Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="index.html" class="brand-lockup" aria-label="Nalam Home">
-        <img src="assets/logo.png" alt="Nalam — Kitchen &amp; Dressing Room" class="brand-logo">
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-slogan">Your Zone Is Glam.</span>
-      </a>
+      <div style="display:flex;align-items:center;gap:0.65rem;">
+        <button type="button" class="menu-btn" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">&#9776;</button>
+        <a href="index.html" class="brand-lockup" aria-label="Nalam Home">
+          <img src="assets/logo.png" alt="Nalam — Kitchen &amp; Dressing Room" class="brand-logo">
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="brand-slogan">Your Zone Is Glam.</span>
+        </a>
+      </div>
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
@@ -32,17 +35,33 @@
       </nav>
 
       <div class="header-actions">
+        <button type="button" class="btn-icon" data-open-wishlist aria-label="Wishlist">
+          <span>&#9825;</span>
+          <span class="badge-count" data-wish-badge>0</span>
+        </button>
+        <button type="button" class="btn-icon" data-open-cart aria-label="Shopping Cart">
+          <span>&#128717;</span>
+          <span class="badge-count" data-cart-badge>0</span>
+        </button>
+        <button type="button" class="btn-icon" data-open-auth aria-label="Account">
+          <span>&#128100;</span>
+          <span class="btn-icon-label" data-account-label>Sign In</span>
+        </button>
         <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch Language">
           <span data-i18n="lang_btn">عربي</span>
         </button>
-        <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa header-wa" data-i18n="nav_wa">WhatsApp Inquiry</a>
-        <button type="button" class="menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+        <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa header-wa" data-i18n="nav_wa">WhatsApp</a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
+  <!-- Mobile Drawer Click-Outside Backdrop & Slide-In Menu -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-head">
+      <img src="assets/logo.png" alt="Nalam" style="height:34px;width:auto;">
+      <button type="button" class="drawer-close-btn" id="mobileDrawerCloseBtn" aria-label="Close Menu">&times;</button>
+    </div>
     <ul>
       <li><a href="index.html#showcase" data-i18n="nav_showcase">Showcase</a></li>
       <li><a href="index.html#stages" data-i18n="nav_stages">Our Stages</a></li>
@@ -50,19 +69,22 @@
       <li><a href="index.html#materials" data-i18n="nav_materials">Materials &amp; Hardware</a></li>
       <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
     </ul>
-    <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;" data-i18n="nav_wa">WhatsApp Inquiry</a>
-  </div>
+    <button type="button" class="btn btn-outline" style="width:100%;" data-open-auth>
+      <span data-account-label>Sign In</span>
+    </button>
+    <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;" data-i18n="nav_wa">WhatsApp</a>
+  </aside>
 
   <!-- Contact Page Hero -->
   <section class="page-hero">
     <div class="container">
       <div class="eyebrow" data-i18n="contact_eyebrow">NEW CAIRO SHOWROOM &amp; CONSULTATIONS</div>
       <h1 class="section-title" data-i18n="contact_page_title">Visit Our New Cairo Showroom</h1>
-      <p class="section-subtitle" style="max-width:680px;" data-i18n="contact_page_sub">Book a private material consultation, explore Good Wood, Boardium, SAMET, and FGV samples in person, or send your dimensions for a fast quotation.</p>
+      <p class="section-subtitle" style="max-width:680px;" data-i18n="contact_page_sub">Book a private material consultation, explore Good Wood, 16mm Blockboard, Boardium, SAMET, and FGV samples in person, or send your dimensions for a fast quotation.</p>
     </div>
   </section>
 
-  <!-- Showroom Details & Consultation Form -->
+  <!-- Showroom Details, Embedded Map & Consultation Form -->
   <section class="section-pad contact-section">
     <div class="container">
       <div class="contact-grid">
@@ -74,6 +96,20 @@
               <p data-config-address>New Cairo Showroom, Cairo Governorate, Egypt</p>
             </div>
           </div>
+
+          <div class="map-window-box">
+            <iframe
+              title="Nalam New Cairo Showroom Map"
+              src="https://maps.google.com/maps?q=New%20Cairo,%20Cairo%20Governorate,%20Egypt&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-window-bar">
+              <button type="button" class="btn btn-outline" data-copy-maps data-i18n="btn_copy_map">Copy Maps Link</button>
+              <a href="https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="btn_maps">Open in Google Maps</a>
+            </div>
+          </div>
+
           <div class="showroom-item">
             <div class="showroom-dot">&#9742;</div>
             <div>
@@ -97,8 +133,7 @@
           </div>
 
           <div class="showroom-actions">
-            <a href="https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="btn_maps">Open in Google Maps</a>
-            <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" data-i18n="btn_wa_direct">Chat on WhatsApp</a>
+            <a href="https://wa.me/201132284750" target="_blank" rel="noopener noreferrer" class="btn btn-wa" style="width:100%;" data-i18n="btn_wa_direct">Chat on WhatsApp</a>
           </div>
         </div>
 
@@ -138,7 +173,7 @@
         <div>
           <img src="assets/logo-light.png" alt="Nalam — Kitchen &amp; Dressing Room" class="footer-logo">
           <div class="footer-slogan">Your Zone Is Glam.</div>
-          <p class="footer-desc" data-i18n="footer_desc">Bespoke luxury kitchens, dressing rooms, and architectural cabinetry crafted in New Cairo with European/Turkish hardware and 5-year warranty.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Bespoke luxury kitchens, dressing rooms, and architectural cabinetry crafted in New Cairo with certified materials and 5-year warranty.</p>
         </div>
 
         <div class="footer-col">
@@ -164,11 +199,72 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Nalam (نالام). All Rights Reserved.</span>
+        <span>© 2026 Nalam. All Rights Reserved.</span>
         <span style="font-family:var(--font-serif);font-style:italic;color:var(--gold-light);">Your Zone Is Glam.</span>
       </div>
     </div>
   </footer>
+
+  <!-- Shared Account Modal & Side Drawers -->
+  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true" aria-label="Nalam Account">
+    <div class="auth-panel">
+      <button type="button" class="modal-close" id="authCloseBtn" aria-label="Close">&times;</button>
+      <div style="text-align:center;margin-bottom:1.1rem;">
+        <img src="assets/logo.png" alt="Nalam" style="height:36px;margin-inline:auto;margin-bottom:0.35rem;">
+      </div>
+      <div class="auth-banner" id="authBanner"></div>
+      <div class="auth-tabs" id="authTabsWrap">
+        <button type="button" class="auth-tab active" data-auth-tab="signin" data-i18n="auth_signin_tab">Sign In</button>
+        <button type="button" class="auth-tab" data-auth-tab="signup" data-i18n="auth_signup_tab">Create Account</button>
+      </div>
+      <form id="authSigninForm" class="auth-form">
+        <div class="form-group full"><label for="siEmail" data-i18n="auth_email">Email Address</label><input id="siEmail" type="email" required dir="ltr"></div>
+        <div class="form-group full"><label for="siPass" data-i18n="auth_password">Password</label><input id="siPass" type="password" required minlength="4"></div>
+        <div class="form-group full"><button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="auth_signin_btn">Sign In</button></div>
+      </form>
+      <form id="authSignupForm" class="auth-form" style="display:none;">
+        <div class="form-group"><label for="suName" data-i18n="auth_fullname">Full Name</label><input id="suName" type="text" required></div>
+        <div class="form-group"><label for="suPhone" data-i18n="auth_phone">Phone / WhatsApp</label><input id="suPhone" type="tel" required dir="ltr"></div>
+        <div class="form-group"><label for="suEmail" data-i18n="auth_email">Email Address</label><input id="suEmail" type="email" required dir="ltr"></div>
+        <div class="form-group"><label for="suPass" data-i18n="auth_password">Password</label><input id="suPass" type="password" required minlength="4"></div>
+        <div class="form-group"><label for="suGov" data-i18n="auth_gov">Governorate</label><select id="suGov"><option value="Cairo" data-i18n="auth_gov_cairo">Cairo Governorate</option><option value="Giza" data-i18n="auth_gov_giza">Giza Governorate</option><option value="Other" data-i18n="auth_gov_other">Other Governorate</option></select></div>
+        <div class="form-group"><label for="suFloor" data-i18n="auth_floor">Building Floor Level</label><select id="suFloor" data-floor-select></select></div>
+        <div class="form-group full"><label for="suAddress" data-i18n="auth_address">Delivery Area / Street Address</label><input id="suAddress" type="text" required></div>
+        <div class="form-group full"><button type="submit" class="btn btn-gold" style="width:100%;" data-i18n="auth_signup_btn">Create Account</button></div>
+      </form>
+      <form id="authProfileForm" class="auth-form" style="display:none;">
+        <div class="form-group full" style="text-align:center;"><h3 class="serif" style="font-size:1.55rem;" data-i18n="auth_profile_title">My Nalam Account</h3></div>
+        <div class="form-group"><label for="profName" data-i18n="auth_fullname">Full Name</label><input id="profName" type="text" required></div>
+        <div class="form-group"><label for="profPhone" data-i18n="auth_phone">Phone / WhatsApp</label><input id="profPhone" type="tel" required dir="ltr"></div>
+        <div class="form-group"><label for="profGov" data-i18n="auth_gov">Governorate</label><select id="profGov"><option value="Cairo" data-i18n="auth_gov_cairo">Cairo Governorate</option><option value="Giza" data-i18n="auth_gov_giza">Giza Governorate</option><option value="Other" data-i18n="auth_gov_other">Other Governorate</option></select></div>
+        <div class="form-group"><label for="profFloor" data-i18n="auth_floor">Building Floor Level</label><select id="profFloor" data-floor-select></select></div>
+        <div class="form-group full"><label for="profAddress" data-i18n="auth_address">Delivery Area / Street Address</label><input id="profAddress" type="text" required></div>
+        <div class="form-group full" style="display:flex;gap:0.6rem;flex-direction:row;"><button type="submit" class="btn btn-primary" style="flex:1;" data-i18n="auth_save_profile">Save Account Details</button><button type="button" class="btn btn-outline" id="authSignoutBtn" data-i18n="auth_signout_btn">Sign Out</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="side-drawer-backdrop" id="sideDrawerBackdrop"></div>
+  <aside class="side-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="side-drawer-head"><h3 data-i18n="cart_title">Your Shopping Cart</h3><button type="button" class="drawer-close-btn" data-close-side-drawer aria-label="Close">&times;</button></div>
+    <div class="side-drawer-body" id="cartDrawerBody"></div>
+    <div class="side-drawer-foot" id="cartDrawerFoot">
+      <div class="checkout-floor-grid">
+        <div><label for="checkoutGov" style="font-size:0.72rem;font-weight:600;color:var(--espresso-muted);" data-i18n="checkout_gov_lbl">Delivery Governorate</label><select id="checkoutGov" style="width:100%;"><option value="Cairo" data-i18n="auth_gov_cairo">Cairo Governorate</option><option value="Giza" data-i18n="auth_gov_giza">Giza Governorate</option><option value="Other" data-i18n="auth_gov_other">Other Governorate</option></select></div>
+        <div><label for="checkoutFloor" style="font-size:0.72rem;font-weight:600;color:var(--espresso-muted);" data-i18n="checkout_floor_lbl">Delivery Floor Level</label><select id="checkoutFloor" data-floor-select style="width:100%;"></select></div>
+      </div>
+      <select id="checkoutPayMethod" style="padding:0.55rem 0.72rem;border-radius:8px;border:1px solid rgba(200,182,160,0.85);background:#FFFFFF;font-size:0.82rem;"><option value="InstaPay" data-i18n="modal_pay_instapay">InstaPay (Instant Bank Transfer)</option><option value="Mobile Wallet" data-i18n="modal_pay_wallet">Mobile Wallet (Vodafone / Orange / Etisalat Cash)</option></select>
+      <div class="summary-row"><span data-i18n="subtotal_lbl">Items Subtotal</span><strong id="cartSubtotalVal">0 EGP</strong></div>
+      <div class="summary-row"><span data-i18n="delivery_base_lbl">Delivery (Cairo &amp; Giza, up to 2nd floor)</span><strong id="cartDeliveryBaseVal">5,000 EGP</strong></div>
+      <div class="summary-row"><span data-i18n="delivery_floor_lbl">Additional Floor Carry Fee</span><strong id="cartFloorFeeVal">Included</strong></div>
+      <div class="summary-row total"><span data-i18n="grand_total_lbl">Estimated Total</span><span id="cartGrandTotalVal">0 EGP</span></div>
+      <button type="button" class="btn btn-wa" id="cartCheckoutBtn" style="width:100%;" data-i18n="checkout_btn">Checkout via WhatsApp (InstaPay / Wallet)</button>
+    </div>
+  </aside>
+  <aside class="side-drawer" id="wishlistDrawer" aria-label="Wishlist">
+    <div class="side-drawer-head"><h3 data-i18n="wish_title">Your Wishlist</h3><button type="button" class="drawer-close-btn" data-close-side-drawer aria-label="Close">&times;</button></div>
+    <div class="side-drawer-body" id="wishlistDrawerBody"></div>
+  </aside>
 
   <div class="toast" id="nalamToast" role="status" aria-live="polite"></div>
 

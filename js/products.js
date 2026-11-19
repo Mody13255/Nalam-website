@@ -1,7 +1,7 @@
 /* ==========================================================================
-   NALAM (نالام) — Brand Configuration & 9-Category Sales Catalogue Data
+   NALAM — Brand Configuration, Delivery Pricing & 9-Category Sales Catalogue
    Swap your real product photos into assets/products/ using the paths below,
-   and update EGP prices or InstaPay handle in one place.
+   and update EGP prices, delivery rates, or InstaPay handle in one place.
    ========================================================================== */
 
 window.NALAM_CONFIG = {
@@ -13,11 +13,16 @@ window.NALAM_CONFIG = {
   whatsappNumber: '201132284750',
   instapayHandle: 'nalam@instapay',
   mapsUrl: 'https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=New%20Cairo,%20Cairo%20Governorate,%20Egypt&t=&z=13&ie=UTF8&iwloc=&output=embed',
   instagramUrl: 'https://www.instagram.com/nalam.kitchen.dressingroom/',
   showroomHoursEn: 'Daily: 11:00 AM – 10:00 PM (Showroom & Consultations)',
   showroomHoursAr: 'يومياً: 11:00 صباحاً – 10:00 مساءً (المعرض والاستشارات)',
   addressEn: 'New Cairo Showroom, Cairo Governorate, Egypt',
-  addressAr: 'معرض نالام — القاهرة الجديدة، محافظة القاهرة، مصر'
+  addressAr: 'معرض نالام — القاهرة الجديدة، محافظة القاهرة، مصر',
+  /* Delivery Fee Rules (Cairo & Giza) */
+  baseDeliveryFeeEgp: 5000,   // Cairo & Giza up to 2nd floor
+  includedMaxFloor: 2,        // Floors 0 (Ground), 1, and 2 included in base fee
+  extraFloorFeeEgp: 500       // Per additional floor above 2nd floor
 };
 
 window.NALAM_CATEGORIES = [
@@ -42,8 +47,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'سرير أورا كينج منجد',
     dimensions: '200 × 215 × 125 cm',
     priceEgp: 28500,
-    materialEn: 'Good Wood melamine-faced sandwich blockboard frame with bouclé headboard & solid beech slats.',
-    materialAr: 'هيكل كونتر جود وود ميلامين ساندويتش مع ظهر منجد بوكليه وملل زان طبيعي.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard engineered with minimal gaps, bouclé headboard & solid beech slats.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم بتقفيل دقيق وأقل فراغات ممكنة، مع ظهر منجد بوكليه وملل زان طبيعي.',
     hardwareEn: 'Heavy-duty hydraulic lift storage option • Turkish SAMET fittings',
     hardwareAr: 'إمكانية إضافة ميكانيزم تخزين هيدروليك • إكسسوارات SAMET تركي',
     finishEn: 'Warm Sand Bouclé & Natural Oak',
@@ -63,8 +68,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'دريسينج روم لوميير متكامل',
     dimensions: '320 × 60 × 260 cm (Custom)',
     priceEgp: 94000,
-    materialEn: 'Good Wood / Top Wood melamine-faced sandwich blockboard with smoked bronze glass doors & warm LED profiles.',
-    materialAr: 'كونتر جود وود / توب وود ميلامين مع ضلف زجاج برونزي وإضاءة ليد دافئة.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard with minimal-gap precision joinery, smoked bronze glass doors & warm LED profiles.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم بتقفيل دقيق وأقل فراغات ممكنة مع ضلف زجاج برونزي وإضاءة ليد دافئة.',
     hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close drawer runners',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • مجر أدراج سفلية FGV إيطالي سوفت كلوز',
     finishEn: 'Cashmere Taupe & Walnut Veneer',
@@ -84,9 +89,9 @@ window.NALAM_PRODUCTS = [
     titleAr: 'مطبخ فيرونا مع جزيرة وسطية',
     dimensions: 'Custom Layout • Height 260 cm (incl. 10 cm top filler)',
     priceEgp: 189000,
-    materialEn: 'Ultra Glossy / Matte fronts over Good Wood white sandwich blockboard carcasses; 100% water-resistant Boardium sink unit.',
-    materialAr: 'ضلف ألترا جلوسي / مط على علب كونتر جود وود أبيض؛ وحدة حوض بورديوم 100% مقاوم للمياه.',
-    hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close runners • Price includes installation',
+    materialEn: 'Kitchen Spec: Ultra Glossy / Matte fronts over Good Wood / Top Wood sandwich blockboard carcasses; 100% water-resistant Boardium sink unit.',
+    materialAr: 'مواصفات المطابخ: ضلف ألترا جلوسي / مط على علب كونتر جود وود / توب وود؛ وحدة حوض بورديوم 100% مقاوم للمياه.',
+    hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close runners • Installation included',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • مجر سفلية FGV إيطالي • السعر شامل التركيب',
     finishEn: 'Sage Architectural Matte & Veined Quartz',
     finishAr: 'أخضر سيج مطفي وكوارتز أبيض معرق',
@@ -105,8 +110,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'تسريحة سوليس بإضاءة مدمجة',
     dimensions: '140 × 48 × 78 cm',
     priceEgp: 19500,
-    materialEn: 'Top Wood melamine-faced sandwich blockboard with fluted drawer fronts, velvet jewelry divider & LED mirror.',
-    materialAr: 'كونتر توب وود ميلامين بواجهات مضلعة وتقسيم مخملي للمجوهرات مع مرآة ليد.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard with minimal-gap joinery, fluted drawer fronts & velvet jewelry divider.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم بواجهات مضلعة وتقفيل دقيق وتقسيم مخملي للمجوهرات مع مرآة ليد.',
     hardwareEn: 'Italian FGV undermount soft-close runners • Brushed champagne gold pulls',
     hardwareAr: 'مجر سفلية FGV إيطالي سوفت كلوز • مقابض شامبين جولد مطفي',
     finishEn: 'Cream Cashmere & Champagne Brass',
@@ -126,8 +131,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'كومود نور بدرجين بواجهة مضلعة',
     dimensions: '55 × 42 × 52 cm',
     priceEgp: 7800,
-    materialEn: 'Good Wood melamine-faced sandwich blockboard with architectural recessed top and warm matte lacquer.',
-    materialAr: 'كونتر جود وود ميلامين مع سطح غاطس أنيق وتشطيب مطفي دافئ.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard with minimal-gap seams and architectural recessed top.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم بتقفيل متقن وأقل فراغات مع سطح غاطس أنيق.',
     hardwareEn: 'Italian FGV undermount soft-close runners • Concealed finger-pull profile',
     hardwareAr: 'مجر سفلية FGV إيطالي سوفت كلوز • جروف فتح مخفية',
     finishEn: 'Warm Beige & Smoked Oak',
@@ -147,8 +152,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'غرفة نوم ماستر سيرين كاملة',
     dimensions: 'King Bed + 2 Nightstands + 240 cm Wardrobe + Vanity',
     priceEgp: 118000,
-    materialEn: 'Full Good Wood / Top Wood melamine-faced sandwich blockboard ensemble tailored to your room dimensions.',
-    materialAr: 'طقم غرفة نوم متكامل من كونتر جود وود / توب وود ميلامين مفصل حسب مقاسات غرفتك.',
+    materialEn: 'Rooms Spec: 16mm warp-resistant melamine-faced blockboard precision-joined with minimal gaps, tailored to your room.',
+    materialAr: 'مواصفات الغرف: كونتر ميلامين مقاوم للتقوس 16 مم بتقفيل دقيق وأقل فراغات ممكنة مفصل حسب مقاسات غرفتك.',
     hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close runners',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • مجر سفلية FGV إيطالي سوفت كلوز',
     finishEn: 'Sand Linen & Warm Walnut',
@@ -168,8 +173,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'كوفي كورنر باريستا فاخر',
     dimensions: '140 × 50 × 210 cm',
     priceEgp: 26500,
-    materialEn: 'Top Wood melamine-faced blockboard with heat-resistant quartz counter, backlit glass shelves & mug hooks.',
-    materialAr: 'كونتر توب وود ميلامين مع سطح كوارتز مقاوم للحرارة وأرفف زجاجية مضاءة.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard with minimal-gap finish, heat-resistant quartz counter & backlit glass shelves.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم مع سطح كوارتز مقاوم للحرارة وأرفف زجاجية مضاءة.',
     hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close runners',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • مجر سفلية FGV إيطالي سوفت كلوز',
     finishEn: 'Espresso Walnut & Champagne Gold',
@@ -189,8 +194,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'جزامة أتيليه ارتفاع كامل للمدخل',
     dimensions: '120 × 38 × 220 cm',
     priceEgp: 21000,
-    materialEn: 'Good Wood melamine-faced sandwich blockboard with ventilated angled shelves & top luggage/coat storage.',
-    materialAr: 'كونتر جود وود ميلامين مع أرفف مائلة بفتحات تهوية وتخزين علوي.',
+    materialEn: '16mm warp-resistant melamine-faced blockboard with minimal-gap doors, ventilated angled shelves & top storage.',
+    materialAr: 'كونتر ميلامين مقاوم للتقوس 16 مم مع أرفف مائلة بفتحات تهوية وتخزين علوي.',
     hardwareEn: 'Turkish SAMET soft-close hinges • Concealed handleless shadow-gap groove',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • جروف فتح مخفي بدون مقابض',
     finishEn: 'Warm Taupe & Natural Walnut',
