@@ -1,7 +1,7 @@
 /* ==========================================================================
    NALAM — Brand Configuration, Delivery Pricing & 9-Category Sales Catalogue
    Swap your real product photos into assets/products/ using the paths below,
-   and update EGP prices, delivery rates, webhook URL, or InstaPay handle here.
+   and update EGP prices, delivery rates, webhook URL, or payment details here.
    ========================================================================== */
 
 window.NALAM_CONFIG = {
@@ -13,11 +13,14 @@ window.NALAM_CONFIG = {
   phoneHref: 'tel:+201132284750',
   whatsappNumber: '201132284750',
   instapayHandle: 'nalam@instapay',
+  instapayAccountName: 'Nalam Kitchen & Dressing Room',
+  mobileWalletNumber: '011 32284750',
+  mobileWalletProviders: 'Vodafone Cash • Orange Cash • Etisalat Cash • WE Pay',
   mapsUrl: 'https://maps.app.goo.gl/vt4eZUMmj4ZkwLQM6',
   mapsEmbedUrl: 'https://maps.google.com/maps?q=New%20Cairo,%20Cairo%20Governorate,%20Egypt&t=&z=13&ie=UTF8&iwloc=&output=embed',
   instagramUrl: 'https://www.instagram.com/nalam.kitchen.dressingroom/',
-  showroomHoursEn: 'Daily: 11:00 AM – 10:00 PM (Showroom & Consultations)',
-  showroomHoursAr: 'يومياً: 11:00 صباحاً – 10:00 مساءً (المعرض والاستشارات)',
+  showroomHoursEn: 'Daily: 11:00 AM – 8:00 PM (Showroom & Consultations)',
+  showroomHoursAr: 'يومياً: 11:00 صباحاً – 8:00 مساءً (المعرض والاستشارات)',
   addressEn: 'New Cairo Showroom, Cairo Governorate, Egypt',
   addressAr: 'معرض نالام — القاهرة الجديدة، محافظة القاهرة، مصر',
 
@@ -26,8 +29,7 @@ window.NALAM_CONFIG = {
 
   /* Flat-Rate Delivery Fee Rules (Cairo & Giza) */
   baseDeliveryFeeEgp: 5000,   // Flat-rate Cairo & Giza delivery & installation (up to 2nd floor)
-  includedMaxFloor: 2,        // Floors 0 (Ground), 1, and 2 included in flat rate
-  extraFloorFeeEgp: 500       // Per additional floor above 2nd floor
+  includedMaxFloor: 2         // Ground (0), 1st (1), and 2nd (2) included; Higher is calculated upon confirmation
 };
 
 window.NALAM_CATEGORIES = [
@@ -94,8 +96,8 @@ window.NALAM_PRODUCTS = [
     titleAr: 'مطبخ فيرونا مع جزيرة وسطية',
     dimensions: 'Custom Layout • Height 260 cm (incl. 10 cm top filler)',
     priceEgp: 189000,
-    materialEn: 'Kitchen Spec: Ultra Glossy / Matte fronts over Good Wood / Top Wood sandwich blockboard carcasses; 100% water-resistant Boardium sink unit.',
-    materialAr: 'مواصفات المطابخ: ضلف ألترا جلوسي / مط على علب كونتر جود وود / توب وود؛ وحدة حوض بورديوم 100% مقاوم للمياه.',
+    materialEn: 'Kitchen Spec: White HPL kitchen carcasses crafted from renowned Good Wood / Top Wood boards; 100% water-resistant Boardium sink unit.',
+    materialAr: 'مواصفات المطابخ: علب مطابخ HPL أبيض مصنعة من ألواح جود وود / توب وود الشهيرة؛ وحدة حوض بورديوم 100% مقاوم للمياه.',
     hardwareEn: 'Turkish SAMET soft-close hinges • Italian FGV undermount soft-close runners • Installation included',
     hardwareAr: 'مفصلات SAMET تركي سوفت كلوز • مجر سفلية FGV إيطالي • السعر شامل التركيب',
     finishEn: 'Sage Architectural Matte & Veined Quartz',

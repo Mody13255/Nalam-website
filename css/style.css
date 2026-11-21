@@ -2573,3 +2573,651 @@ html[dir="rtl"] .side-drawer {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   Round 2 Refinements: Mobile-Scrollable Auth Split Panel, Clean Cart Borders,
+   Terms Modal, Payment Progress & Admin Messaging Hub, Account Hub Page
+   ========================================================================== */
+
+/* Fix modal mobile scrolling cleanly */
+.modal-backdrop {
+  align-items: flex-start;
+  padding: max(1rem, 4vh) 1rem 2rem;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.modal-panel,
+.auth-panel {
+  margin: auto;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Split Auth Modal with Clean Photo (Zero Stretched Logo) */
+.auth-panel.auth-split {
+  width: min(860px, 100%);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  overflow: hidden;
+}
+
+.auth-photo-col {
+  position: relative;
+  min-height: 360px;
+  background: var(--pebble-base);
+  overflow: hidden;
+}
+
+.auth-photo-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.auth-photo-caption {
+  position: absolute;
+  inset-inline: 1.15rem;
+  bottom: 1.15rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(24, 22, 20, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(223, 190, 138, 0.35);
+  color: #FAF8F4;
+}
+
+.auth-photo-caption strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--glow-light);
+}
+
+.auth-photo-caption span {
+  font-size: 0.75rem;
+  color: rgba(245, 243, 239, 0.82);
+}
+
+.auth-body-col {
+  padding: 1.85rem 1.8rem;
+  overflow-y: auto;
+  max-height: 86dvh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.auth-body-col .auth-header {
+  text-align: start;
+  margin-bottom: 1rem;
+}
+
+.auth-body-col .auth-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--charcoal);
+  line-height: 1.15;
+}
+
+.auth-body-col .auth-perks {
+  justify-content: flex-start;
+}
+
+/* Email Verification Row inside Sign Up */
+.email-verify-row {
+  display: flex;
+  gap: 0.45rem;
+  align-items: stretch;
+}
+
+.email-verify-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.email-verify-btn {
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glow-gold);
+  background: rgba(196, 158, 101, 0.16);
+  color: var(--glow-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.email-verify-btn:hover {
+  background: var(--glow-gold);
+  color: #FFFDF9;
+}
+
+.email-verify-btn.verified {
+  background: var(--wa-green);
+  border-color: var(--wa-green);
+  color: #FFFFFF;
+}
+
+.verify-code-box {
+  margin-top: 0.45rem;
+  padding: 0.72rem 0.85rem;
+  border-radius: 11px;
+  background: rgba(196, 158, 101, 0.12);
+  border: 1px dashed rgba(196, 158, 101, 0.65);
+  display: none;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.verify-code-box.show {
+  display: flex;
+}
+
+.verify-code-hint {
+  font-size: 0.74rem;
+  color: var(--charcoal-soft);
+}
+
+/* Terms & Services Checkbox */
+.terms-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.58rem;
+  padding: 0.68rem 0.82rem;
+  border-radius: 11px;
+  background: rgba(255, 253, 249, 0.82);
+  border: 1px solid rgba(181, 172, 160, 0.65);
+  font-size: 0.79rem;
+  line-height: 1.48;
+  color: var(--charcoal-soft);
+}
+
+.terms-check-row input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: var(--glow-dark);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.terms-link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--glow-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Terms & Services Modal */
+.terms-panel {
+  width: min(680px, 100%);
+  background: linear-gradient(180deg, #FBF9F6 0%, #EFECE6 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(196, 158, 101, 0.5);
+  box-shadow: 0 34px 86px rgba(0, 0, 0, 0.38);
+  padding: 2rem 1.85rem;
+  position: relative;
+  margin: auto;
+  animation: modalSpring 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.terms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-inline-end: 0.35rem;
+}
+
+.terms-item {
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.9);
+  border: 1px solid rgba(181, 172, 160, 0.52);
+}
+
+.terms-item h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.terms-item p {
+  font-size: 0.84rem;
+  color: var(--stone-muted);
+  line-height: 1.6;
+}
+
+.terms-item.highlight {
+  border-color: rgba(196, 158, 101, 0.72);
+  background: rgba(196, 158, 101, 0.11);
+}
+
+/* Fix Cart Drawer Delivery Details & Payment Method Containment */
+.checkout-card-box {
+  padding: 0.95rem;
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.92);
+  border: 1px solid rgba(181, 172, 160, 0.58);
+  box-shadow: 0 4px 16px rgba(30, 28, 26, 0.04);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
+}
+
+.checkout-form-grid,
+.pay-method-grid {
+  width: 100%;
+  max-width: 100%;
+}
+
+.checkout-field,
+.pay-card-option {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.checkout-field input,
+.checkout-field select {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header Avatar Mini Badge */
+.header-avatar-mini {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--glow-gold);
+}
+
+/* ==========================================================================
+   Payment Hub Page & Overlay (InstaPay / Mobile Wallet / Progress / Admin Chat)
+   ========================================================================== */
+.hub-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.hub-card {
+  background: var(--pebble-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(181, 172, 160, 0.58);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.pay-toggle-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.pay-big-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.28rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 16px;
+  border: 1.5px solid rgba(181, 172, 160, 0.72);
+  background: rgba(255, 253, 249, 0.92);
+  cursor: pointer;
+  text-align: start;
+  transition: var(--transition);
+}
+
+.pay-big-btn:hover {
+  border-color: var(--glow-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(196, 158, 101, 0.18);
+}
+
+.pay-big-btn.active {
+  border-color: var(--glow-gold);
+  background: linear-gradient(135deg, rgba(196, 158, 101, 0.18) 0%, rgba(255, 253, 249, 0.98) 100%);
+  box-shadow: 0 0 0 2.5px rgba(196, 158, 101, 0.28), 0 12px 28px rgba(196, 158, 101, 0.2);
+}
+
+.pay-big-btn strong {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--charcoal);
+}
+
+.pay-big-btn span {
+  font-size: 0.78rem;
+  color: var(--stone-muted);
+}
+
+.pay-detail-drawer {
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.96);
+  border: 1px solid rgba(196, 158, 101, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  animation: cardFadeIn 0.35s ease;
+}
+
+.pay-cred-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 12px;
+  background: rgba(236, 232, 225, 0.75);
+  border: 1px solid rgba(181, 172, 160, 0.55);
+}
+
+.pay-cred-row code {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+/* Payment Progress Stepper */
+.progress-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+.progress-step {
+  padding: 0.75rem 0.55rem;
+  border-radius: 13px;
+  background: rgba(236, 232, 225, 0.65);
+  border: 1px solid rgba(181, 172, 160, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition);
+}
+
+.progress-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(181, 172, 160, 0.5);
+  color: var(--charcoal-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.progress-step span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--stone-muted);
+  line-height: 1.25;
+}
+
+.progress-step.done {
+  border-color: rgba(27, 110, 72, 0.55);
+  background: rgba(27, 110, 72, 0.1);
+}
+
+.progress-step.done .progress-step-num {
+  background: var(--wa-green);
+  color: #FFFFFF;
+}
+
+.progress-step.done span {
+  color: var(--wa-green);
+}
+
+.progress-step.current {
+  border-color: var(--glow-gold);
+  background: rgba(196, 158, 101, 0.16);
+  box-shadow: 0 0 16px rgba(196, 158, 101, 0.24);
+}
+
+.progress-step.current .progress-step-num {
+  background: var(--glow-gold);
+  color: #FFFDF9;
+}
+
+.progress-step.current span {
+  color: var(--charcoal);
+}
+
+.progress-bar-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(181, 172, 160, 0.35);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 25%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--glow-gold), var(--wa-green));
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Admin Verification Bar */
+.admin-control-bar {
+  padding: 0.9rem 1rem;
+  border-radius: 13px;
+  background: rgba(30, 28, 26, 0.92);
+  color: var(--pebble-lightest);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.admin-control-bar small {
+  font-size: 0.74rem;
+  color: var(--glow-light);
+}
+
+.admin-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.admin-btn-row .btn {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.76rem;
+}
+
+/* Client <-> Admin Follow-Up Chat Box */
+.chat-locked-banner {
+  padding: 1.4rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(236, 232, 225, 0.78);
+  border: 1px dashed rgba(181, 172, 160, 0.85);
+  text-align: center;
+  color: var(--stone-muted);
+  font-size: 0.86rem;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-messages {
+  max-height: 290px;
+  overflow-y: auto;
+  padding: 0.95rem;
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.94);
+  border: 1px solid rgba(181, 172, 160, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.chat-bubble {
+  max-width: 84%;
+  padding: 0.68rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.chat-bubble.client {
+  align-self: flex-end;
+  background: var(--charcoal);
+  color: #FAF8F4;
+  border-end-end-radius: 4px;
+}
+
+.chat-bubble.admin {
+  align-self: flex-start;
+  background: rgba(196, 158, 101, 0.2);
+  border: 1px solid rgba(196, 158, 101, 0.45);
+  color: var(--charcoal);
+  border-end-start-radius: 4px;
+}
+
+.chat-meta {
+  display: block;
+  font-size: 0.68rem;
+  opacity: 0.72;
+  margin-top: 0.22rem;
+}
+
+.chat-compose {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chat-compose input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.68rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(181, 172, 160, 0.85);
+  background: #FFFFFF;
+  font-size: 0.86rem;
+}
+
+/* Account Hub Avatar Upload */
+.avatar-upload-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.92);
+  border: 1px solid rgba(196, 158, 101, 0.42);
+}
+
+.avatar-preview-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--glow-gold), var(--glow-dark));
+  color: #FFFDF9;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2.5px solid var(--glow-light);
+  box-shadow: 0 10px 26px rgba(196, 158, 101, 0.3);
+  flex-shrink: 0;
+}
+
+.avatar-preview-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.account-stat-box {
+  padding: 0.95rem;
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.9);
+  border: 1px solid rgba(181, 172, 160, 0.52);
+  text-align: center;
+}
+
+.account-stat-box strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--glow-dark);
+}
+
+.account-stat-box span {
+  font-size: 0.76rem;
+  color: var(--stone-muted);
+}
+
+@media (max-width: 860px) {
+  .auth-panel.auth-split {
+    grid-template-columns: 1fr;
+  }
+  .auth-photo-col {
+    min-height: 155px;
+    max-height: 185px;
+  }
+  .auth-body-col {
+    max-height: none;
+    overflow: visible;
+    padding: 1.35rem 1.2rem 1.7rem;
+  }
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+  .progress-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .pay-toggle-buttons,
+  .account-stat-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Prevent header nav crowding at 1024-1360px widths */
+.nav-links { gap: 0.34rem; }
+.nav-links a { padding: 0.38rem 0.7rem; font-size: 0.76rem; }
+@media (max-width: 1180px) {
+  .nav-links, .header-wa { display: none; }
+  .menu-btn { display: inline-flex; }
+}
